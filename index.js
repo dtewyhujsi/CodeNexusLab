@@ -1,3 +1,4 @@
-function findNumbers(nums) {
-  return nums.filter((num) => num.toString().length % 2 === 0).length;
+function factorial(n) {
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
 }

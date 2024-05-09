@@ -1,2 +1,2 @@
-const countOccurrences = (arr, value) =>
-  arr.reduce((a, v) => (v === value ? a + 1 : a), 0);
+const initializeArrayWithRange = (end, start = 0) =>
+  Array.from({ length: end - start }, (_, i) => i + start);

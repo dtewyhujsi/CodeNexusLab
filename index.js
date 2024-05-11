@@ -1,13 +1,11 @@
-const fibonacci = (n) => {
-  if (n <= 1) {
-    return n;
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+  const pivot = arr[Math.floor(arr.length / 2)];
+  const left = [];
+  const right = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < pivot) left.push(arr[i]);
+    else if (arr[i] > pivot) right.push(arr[i]);
   }
-  let prev = 0;
-  let curr = 1;
-  for (let i = 2; i <= n; i++) {
-    const next = prev + curr;
-    prev = curr;
-    curr = next;
-  }
-  return curr;
-};
+  return quickSort(left).concat([pivot]).concat(quickSort(right));
+}
